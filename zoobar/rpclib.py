@@ -3,7 +3,7 @@ import sys
 import socket
 import stat
 import errno
-import debug
+from debug import *
 
 import json
 
@@ -44,8 +44,6 @@ class RpcServer(object):
             sock.sendall(format_resp(ret) + '\n')
 
     def run_sockpath_fork(self, sockpath):
-        debug.log('AAAAAAAA' + sockpath)
-
         if os.path.exists(sockpath):
             s = os.stat(sockpath)
             if not stat.S_ISSOCK(s.st_mode):
@@ -94,8 +92,6 @@ class RpcClient(object):
         self.close()
 
 def client_connect(pathname):
-    debug.log("AAAAAAAAAAAAAAAA" + pathname)
     sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
     sock.connect(pathname)
     return RpcClient(sock)
-
