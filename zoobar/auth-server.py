@@ -11,7 +11,7 @@ class AuthRpcServer(rpclib.RpcServer):
 
     def rpc_register(self, username, password):
         return auth.register(username, password)
-        
+
     def rpc_check_token(self, username, token):
         return auth.check_token(username, token)
 
