@@ -3,10 +3,11 @@ from functools import wraps
 from debug import *
 from zoodb import *
 
+#import auth
+#import bank
 import auth_client
-import bank
-import random
 import bank_client
+import random
 
 class User(object):
     def __init__(self):
