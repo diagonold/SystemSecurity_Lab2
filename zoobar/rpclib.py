@@ -44,13 +44,14 @@ class RpcServer(object):
             sock.sendall(format_resp(ret) + '\n')
 
     def run_sockpath_fork(self, sockpath):
+        debug.log('AAAAAAAA' + sockpath)
+
         if os.path.exists(sockpath):
             s = os.stat(sockpath)
             if not stat.S_ISSOCK(s.st_mode):
                 raise Exception('%s exists and is not a socket' % sockpath)
             os.unlink(sockpath)
 
-        debug.log('AAAAAAAA' + sockpath)
         server = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         server.bind(sockpath)
 
