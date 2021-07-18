@@ -29,7 +29,7 @@ def register(username, password):
     person_db = person_setup()
     cred_db = cred_setup()
     person = person_db.query(Person).get(username)
-    if cred:
+    if person:
         return None
     newperson = Person()
     newperson.username = username
