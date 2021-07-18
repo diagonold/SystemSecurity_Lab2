@@ -70,7 +70,7 @@ chmod a+rwxt /jail/tmp
 mkdir -p /jail/dev
 mknod /jail/dev/urandom c 1 9
 
-Scp -r zoobar /jail/
+cp -r zoobar /jail/
 rm -rf /jail/zoobar/db
 
 python /jail/zoobar/zoodb.py init-person
