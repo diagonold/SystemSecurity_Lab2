@@ -92,7 +92,7 @@ class RpcClient(object):
         self.close()
 
 def client_connect(pathname):
-    print("AAAAAAAAAAAAAAAA" + pathname)
+    log("AAAAAAAAAAAAAAAA" + pathname)
     sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
     sock.connect(pathname)
     return RpcClient(sock)
