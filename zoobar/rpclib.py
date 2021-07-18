@@ -3,7 +3,7 @@ import sys
 import socket
 import stat
 import errno
-from debug import *
+import debug
 
 import json
 
@@ -92,7 +92,7 @@ class RpcClient(object):
         self.close()
 
 def client_connect(pathname):
-    log("AAAAAAAAAAAAAAAA" + pathname)
+    debug.log("AAAAAAAAAAAAAAAA" + pathname)
     sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
     sock.connect(pathname)
     return RpcClient(sock)
