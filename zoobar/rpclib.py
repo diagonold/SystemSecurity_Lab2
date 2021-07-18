@@ -50,6 +50,7 @@ class RpcServer(object):
                 raise Exception('%s exists and is not a socket' % sockpath)
             os.unlink(sockpath)
 
+        debug.log('AAAAAAAA' + sockpath)
         server = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         server.bind(sockpath)
 
