@@ -110,11 +110,8 @@ set_perms 61015:61015 755 /jail/zoobar/index.cgi
 
 
 # Exercise 7
-
-
-
-set_perms 61016:61014 700 /jail/zoobar/db/bank
-set_perms 61016:61014 700 /jail/zoobar/db/bank/bank.db
+set_perms 61017:61014 700 /jail/zoobar/db/bank
+set_perms 61017:61014 700 /jail/zoobar/db/bank/bank.db
 set_perms 61017:61014 755 /jail/zoobar/bank-server.py
 
 # Exercise 9
