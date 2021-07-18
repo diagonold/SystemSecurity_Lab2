@@ -57,6 +57,12 @@ mkdir -p /jail/usr/share/zoneinfo
 cp -r /usr/share/zoneinfo/America /jail/usr/share/zoneinfo/
 
 create_socket_dir /jail/echosvc 61010:61010 755
+create_socket_dir /jail/authsvc 61016:61014 755
+create_socket_dir /jail/banksvc 61017:61014 755
+create_socket_dir /jail/profilesvc 61018:61014 755
+
+
+
 
 mkdir -p /jail/tmp
 chmod a+rwxt /jail/tmp
@@ -64,7 +70,7 @@ chmod a+rwxt /jail/tmp
 mkdir -p /jail/dev
 mknod /jail/dev/urandom c 1 9
 
-cp -r zoobar /jail/
+Scp -r zoobar /jail/
 rm -rf /jail/zoobar/db
 
 python /jail/zoobar/zoodb.py init-person
@@ -85,9 +91,8 @@ python /jail/zoobar/zoodb.py init-transfer
 # set_perms 61014:61014 751 /jail/zoobar/db/transfer/transfer.db
 # set_perms 61015:61015 755 /jail/zoobar/index.cgi
 
-# Exercise 5
+# Exercise 5S
 
-create_socket_dir /jail/authsvc 61016:61014 755
 
 python /jail/zoobar/zoodb.py init-cred
 
@@ -105,7 +110,6 @@ set_perms 61015:61015 755 /jail/zoobar/index.cgi
 
 # Exercise 7
 
-create_socket_dir /jail/banksvc 61017:61014 755
 
 python /jail/zoobar/zoodb.py init-bank
 
@@ -115,5 +119,4 @@ set_perms 61017:61014 755 /jail/zoobar/bank-server.py
 
 # Exercise 9
 
-create_socket_dir /jail/profilesvc 61018:61014 755
 set_perms 61018:61014 755 /jail/zoobar/profile-server.py
