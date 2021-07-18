@@ -98,7 +98,6 @@ int main(int argc, char **argv)
 /* launch a service */
 pid_t launch_svc(CONF *conf, const char *name)
 {
-    system('chroot /jail');
     int fds[2], i;
     pid_t pid;
     char *cmd, *args, *argv[32] = {0}, **ap, *dir;
@@ -149,7 +148,7 @@ pid_t launch_svc(CONF *conf, const char *name)
     {
         /* chroot into dir */
         chroot(dir);
-        chdir('/');
+        chdir("/");
     }
 
     if (NCONF_get_number_e(conf, name, "gid", &gid))
