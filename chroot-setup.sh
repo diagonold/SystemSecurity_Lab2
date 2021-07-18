@@ -75,6 +75,8 @@ rm -rf /jail/zoobar/db
 
 python /jail/zoobar/zoodb.py init-person
 python /jail/zoobar/zoodb.py init-transfer
+python /jail/zoobar/zoodb.py init-cred
+python /jail/zoobar/zoodb.py init-bank
 
 # # Exercise 3
 # # Ensure file on disk such as db can only be read by processes that should be able to read them
@@ -94,7 +96,6 @@ python /jail/zoobar/zoodb.py init-transfer
 # Exercise 5S
 
 
-python /jail/zoobar/zoodb.py init-cred
 
 set_perms 61014:61014 770 /jail/zoobar/db/person
 set_perms 61014:61014 660 /jail/zoobar/db/person/person.db
@@ -111,7 +112,6 @@ set_perms 61015:61015 755 /jail/zoobar/index.cgi
 # Exercise 7
 
 
-python /jail/zoobar/zoodb.py init-bank
 
 set_perms 61016:61014 700 /jail/zoobar/db/bank
 set_perms 61016:61014 700 /jail/zoobar/db/bank/bank.db
