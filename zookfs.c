@@ -20,8 +20,6 @@ int main(int argc, char **argv)
         http_set_executable_uid_gid(uid, gid);
     }
 
-    chroot("/jail");
-    chdir("/");
     signal(SIGPIPE, SIG_IGN);
     signal(SIGCHLD, SIG_IGN);
 
