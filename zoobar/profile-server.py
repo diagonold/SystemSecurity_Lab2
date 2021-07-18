@@ -65,7 +65,7 @@ class ProfileServer(rpclib.RpcServer):
         userdir += "/"
         userdir += userprofile
         if not os.path.exists(userdir):
-            os.mdkir(userdir)
+            os.mkdir(userdir)
             os.chmod(userdir, 0330) # write and execute access to user and groups
 
         (sa, sb) = socket.socketpair(socket.AF_UNIX, socket.SOCK_STREAM, 0)
